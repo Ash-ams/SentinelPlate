@@ -1,0 +1,18 @@
+<annotation>
+  <folder>images</folder>
+  <filename>HSRP_0_MH12.png</filename>
+  <size>
+    <width>640</width>
+    <height>480</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>licence</name>
+    <bndbox>
+      <xmin>129</xmin>
+      <ymin>359</ymin>
+      <xmax>301</xmax>
+      <ymax>395</ymax>
+    </bndbox>
+  </object>
+</annotation>

@@ -1,0 +1,415 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================================= */
+/* VINTAGE APPLE MACINTOSH (CLASSIC MAC OS PLATINUM / SYSTEM 7) DESIGN SYSTEM */
+/* ========================================================================= */
+
+@layer base {
+  :root {
+    --mac-beige: #DDD8CE;
+    --mac-cream: #F5F2EB;
+    --mac-white: #FFFFFF;
+    --mac-border: #1C1C1E;
+    --mac-titlebar: #E5E0D5;
+    --mac-hover: #ECE7DD;
+    --mac-blue: #0050C8;
+    --mac-green: #157A3E;
+    --mac-amber: #D97706;
+    --mac-red: #C81E1E;
+  }
+
+  body {
+    background-color: var(--mac-beige);
+    color: var(--mac-border);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Vintage Macintosh Stippled Desktop */
+  .vintage-mac-desktop {
+    background-color: #DDD8CE;
+    background-image: radial-gradient(#B8B2A6 1.2px, transparent 1.2px);
+    background-size: 8px 8px;
+  }
+
+  /* Classic Mac OS Scrollbars */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #E5E0D5;
+    border-left: 2px solid #1C1C1E;
+    border-top: 2px solid #1C1C1E;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #E5E0D5 0,
+      #E5E0D5 3px,
+      #DDD8CE 3px,
+      #DDD8CE 6px
+    );
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #F5F2EB;
+    border: 2px solid #1C1C1E;
+    box-shadow: inset 1px 1px 0px #FFFFFF, inset -1px -1px 0px #C5BFB3;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ECE7DD;
+  }
+}
+
+/* ========================================================================= */
+/* MACINTOSH WINDOW CHROME & PANELS                                          */
+/* ========================================================================= */
+
+.mac-window {
+  background: #F5F2EB;
+  border: 2px solid #1C1C1E;
+  box-shadow: 4px 4px 0px #1C1C1E;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mac-window-sm {
+  background: #F5F2EB;
+  border: 2px solid #1C1C1E;
+  box-shadow: 3px 3px 0px #1C1C1E;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mac-titlebar {
+  height: 30px;
+  background: #E5E0D5;
+  border-bottom: 2px solid #1C1C1E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  user-select: none;
+  position: relative;
+}
+
+.mac-pinstripes {
+  flex: 1;
+  height: 12px;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    #1C1C1E 2px,
+    #1C1C1E 3px
+  );
+  opacity: 0.85;
+}
+
+.mac-title-text {
+  font-family: 'Space Grotesk', 'JetBrains Mono', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #1C1C1E;
+  padding: 0 10px;
+  background: #E5E0D5;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.mac-close-box {
+  width: 14px;
+  height: 14px;
+  background: #F5F2EB;
+  border: 2px solid #1C1C1E;
+  box-shadow: 1px 1px 0px #1C1C1E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-right: 8px;
+  transition: transform 0.05s ease;
+}
+
+.mac-close-box:active {
+  transform: translate(1px, 1px);
+  background: #1C1C1E;
+}
+
+/* Inset paper well for viewports, images, and logs */
+.mac-well {
+  background: #FFFFFF;
+  border: 2px solid #1C1C1E;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mac-well-muted {
+  background: #EAE6DC;
+  border: 2px solid #1C1C1E;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================= */
+/* TACTILE BEVELED RETRO MAC BUTTONS                                         */
+/* ========================================================================= */
+
+.mac-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #F5F2EB;
+  color: #1C1C1E;
+  border: 2px solid #1C1C1E;
+  box-shadow: 2px 2px 0px #1C1C1E;
+  font-family: 'Space Grotesk', 'JetBrains Mono', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease, transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.mac-btn:hover {
+  background: #ECE7DD;
+}
+
+.mac-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1C1C1E;
+}
+
+.mac-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 2px 2px 0px #1C1C1E;
+}
+
+.mac-btn-primary {
+  background: #0050C8;
+  color: #FFFFFF;
+  border: 2px solid #1C1C1E;
+  box-shadow: 2px 2px 0px #1C1C1E;
+}
+
+.mac-btn-primary:hover {
+  background: #003E9E;
+  color: #FFFFFF;
+}
+
+.mac-btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1C1C1E;
+}
+
+.mac-btn-accent {
+  background: #157A3E;
+  color: #FFFFFF;
+  border: 2px solid #1C1C1E;
+  box-shadow: 2px 2px 0px #1C1C1E;
+}
+
+.mac-btn-accent:hover {
+  background: #106232;
+  color: #FFFFFF;
+}
+
+.mac-btn-accent:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1C1C1E;
+}
+
+.mac-btn-amber {
+  background: #D97706;
+  color: #FFFFFF;
+  border: 2px solid #1C1C1E;
+  box-shadow: 2px 2px 0px #1C1C1E;
+}
+
+.mac-btn-amber:hover {
+  background: #B45309;
+}
+
+.mac-btn-amber:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1C1C1E;
+}
+
+/* Tab buttons */
+.mac-tab-active {
+  background: #1C1C1E !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1C1C1E !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+.mac-tab-inactive {
+  background: #F5F2EB;
+  color: #1C1C1E;
+  border: 2px solid #1C1C1E;
+  box-shadow: 2px 2px 0px #1C1C1E;
+}
+
+.mac-tab-inactive:hover {
+  background: #ECE7DD;
+}
+
+/* Vintage Select Inputs & Inputs */
+.mac-input {
+  background: #FFFFFF;
+  color: #1C1C1E;
+  border: 2px solid #1C1C1E;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.mac-input:focus {
+  outline: 2px solid #0050C8;
+}
+
+/* ========================================================================= */
+/* CLASSIC SIX-COLOR APPLE ACCENT STRIPE                                     */
+/* ========================================================================= */
+
+.apple-six-color {
+  background: linear-gradient(
+    to bottom,
+    #61BB46 0%,
+    #61BB46 16.66%,
+    #FDB827 16.66%,
+    #FDB827 33.33%,
+    #F58220 33.33%,
+    #F58220 50%,
+    #E03A3E 50%,
+    #E03A3E 66.66%,
+    #963D97 66.66%,
+    #963D97 83.33%,
+    #009DDC 83.33%,
+    #009DDC 100%
+  );
+}
+
+.apple-six-color-h {
+  background: linear-gradient(
+    to right,
+    #61BB46 0%,
+    #61BB46 16.66%,
+    #FDB827 16.66%,
+    #FDB827 33.33%,
+    #F58220 33.33%,
+    #F58220 50%,
+    #E03A3E 50%,
+    #E03A3E 66.66%,
+    #963D97 66.66%,
+    #963D97 83.33%,
+    #009DDC 83.33%,
+    #009DDC 100%
+  );
+}
+
+/* ========================================================================= */
+/* EMBOSSED INDIAN HIGH SECURITY REGISTRATION PLATE (HSRP)                  */
+/* ========================================================================= */
+
+.hsrp-plate {
+  display: inline-flex;
+  align-items: center;
+  border: 2.5px solid #1C1C1E;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px #1C1C1E, inset 1px 1px 0px rgba(255, 255, 255, 0.7);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.hsrp-ind-strip {
+  background: #0050C8;
+  color: #FFFFFF;
+  width: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0;
+  padding: 4px 2px;
+  border-right: 2px solid #1C1C1E;
+  flex-shrink: 0;
+}
+
+.hsrp-white-private {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8E5DD 100%);
+  color: #1C1C1E;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.9), -1px -1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hsrp-yellow-commercial {
+  background: linear-gradient(180deg, #FFDE43 0%, #F5C518 100%);
+  color: #1C1C1E;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.hsrp-green-ev {
+  background: linear-gradient(180deg, #157A3E 0%, #0F572C 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Badge tags for ledger and metrics */
+.mac-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1.5px solid #1C1C1E;
+  border-radius: 2px;
+  box-shadow: 1px 1px 0px #1C1C1E;
+}
+
+.mac-tag-blue {
+  background: #D9E8FF;
+  color: #003E9E;
+}
+
+.mac-tag-green {
+  background: #D5F5E3;
+  color: #157A3E;
+}
+
+.mac-tag-amber {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.mac-tag-red {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.mac-tag-gray {
+  background: #E5E0D5;
+  color: #1C1C1E;
+}

@@ -1,0 +1,18 @@
+<annotation>
+  <folder>images</folder>
+  <filename>HSRP_3_TN09.png</filename>
+  <size>
+    <width>640</width>
+    <height>480</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>licence</name>
+    <bndbox>
+      <xmin>314</xmin>
+      <ymin>359</ymin>
+      <xmax>486</xmax>
+      <ymax>395</ymax>
+    </bndbox>
+  </object>
+</annotation>
